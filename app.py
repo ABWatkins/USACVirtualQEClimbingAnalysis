@@ -170,17 +170,7 @@ def findPlace(df, testScore=0, testRegions=None, testCats = None):
                 retdf = retdf.append(pd.Series(row,index=retdf.columns), ignore_index = True)
     return retdf
 
-
-
-app.layout = html.Div(children=[
-    html.Div([
-    html.H2(children='Virtual Bouldering Regional Qualifier Events Across USAC Regions', style={"text-align": "center"}),
-    dcc.Markdown(children='''Based off of file: <http://www.usaclimbing.org/Assets/Regional+Ranking-Preliminary-201116a.pdf>''', style={"text-align": "center"}),
-    html.P(style={"text-align": "center"},children='Use this tool to compare a climber\'s score to others or to see general trends among climbers at QEs across the country'),
-    html.Br(),
-    ],),
-    html.Div([
-    html.Div([
+region_drop = html.Div([
     dcc.Markdown('''**Choose one or more regions** (or leave blank for all) '''),
     dcc.Dropdown(
         id='dropdown-reg',
@@ -191,35 +181,37 @@ app.layout = html.Div(children=[
         #style={"text-align":"center", "width":"25%"}
         #style={'width':'100%'},
         #className="three columns"# offset-by-three columns"
-        ),
-#        html.Div(id='dreg-output-container'),
-        dcc.Markdown('''**Choose one or more categories** (or leave blank for all) '''),
+        ),])
+cat_drop = html.Div([
+    dcc.Markdown('''**Choose your climber's category**'''),
     dcc.Dropdown(
         id='dropdown-cat',
         options =[{'label':i,'value':i} for i in catList],
         multi=True,
         #value=None,
         placeholder='Select one or more categories',
-    ),
-#    html.Div(id='dcat-output-container'),
-    dcc.Markdown('''**Enter your climber's score** (or enter 0 for no comparison score)'''),
+    ),], className='nine columns')
+score_input = html.Div([
+    dcc.Markdown('''**Enter your climber's score**'''),
     dcc.Input(id='inputScore', type='number', min=0, step=50, placeholder='2000', value=2000),
+], className = 'two columns')
+
+table_results = html.Div([
     html.Div(id='score-output-container'),
-    dcc.Markdown('''your climber would have placed as follows in the selected regions/categories '''),
+    dcc.Markdown('''your climber would have placed as follows in the selected categories '''),
     dash_table.DataTable(id='compTable',
         style_data_conditional=[
         {
             'if': {'row_index': 'odd'},
             'backgroundColor': bgcolor#'rgb(248, 248, 248)'
-        }
-        ]
-        ),
-        ],className="three columns",
-    ),
-    html.Div([
-    dcc.Markdown('''Click on one or more categories in the legend to isolate just that category of climbers in any of the visualizations below
+            }
+            ]
+        )
+    ], className =' three columns')
 
-Hover over the graphs to see more information about each data point
+visuals = html.Div([
+    html.Div([
+    dcc.Markdown('''Hover over the graphs to see more information about each data point
     '''),
     dcc.Graph(
         id='genScat',
@@ -233,11 +225,31 @@ Hover over the graphs to see more information about each data point
         id='catHist',
 #        figure = catHFig
     ),
-    dcc.Graph(
-        id='allHist',
+#    dcc.Graph(
+#        id='allHist',
 #        figure=allHFig
-    )],className='nine columns',)
-    ], className='row'),
+#    )
+    ],className='nine columns',),
+#], className='row'),
+])
+
+
+app.layout = html.Div(children=[
+    html.Div([
+    html.H2(children='Virtual Bouldering Regional Qualifier Events Across USAC Regions', style={"text-align": "center"}),
+    dcc.Markdown(children='''Based off of file: <http://www.usaclimbing.org/Assets/Regional+Ranking-Preliminary-201116a.pdf>''', style={"text-align": "center"}),
+    html.P(style={"text-align": "center"},children='Use this tool to compare a climber\'s score to others or to see general trends among climbers at QEs across the country'),
+    html.Br(),
+    ],),
+
+    #html.Div([
+    html.Div([ #region_drop,
+    score_input, cat_drop,], className='row'),
+    html.Div([table_results
+    , visuals,
+        ],className="row"),
+    #),
+    #visulizations,
    html.Div([
     dcc.Markdown(children='''Source code can be found on github: <https://github.com/ABWatkins/USACVirtualQEClimbingAnalysis>''', style={"text-align": "center"}),]),
 ])
@@ -248,30 +260,26 @@ Hover over the graphs to see more information about each data point
 #    Output('dreg-output-container','children'),
 #    Output('dcat-output-container','children'),
    Output('score-output-container', 'children'),
-    Input('dropdown-reg', 'value'),
+    #Input('dropdown-reg', 'value'),
     Input('dropdown-cat', 'value'),
     Input('inputScore', 'value')
 )
-def getDataTable(compRegion = None, compCat = None, compScore = 0):
-    if compRegion==[]:
-        compRegion = None
+def getDataTable(compCat = None, compScore = 0):
     if compCat == []:
         compCat = None
     if compScore == None:
         compScore = 0
-    compDF=findPlace(df, testScore= compScore, testRegions=compRegion, testCats=compCat)
+    compDF=findPlace(df, testScore= compScore, testRegions=None, testCats=compCat)
     data=compDF.to_dict('records')
     columns=[{'id': c, 'name': c} for c in compDF.columns]
     return data,columns, 'With a score of {}'.format(compScore)#,'You have selected {}'.format(compRegion), 'You have selected {}'.format(compCat),'You entered {}'.format(compScore)
 
 @app.callback(
     Output('genScat', 'figure'),
-    Input('dropdown-reg', 'value'),
+    #Input('dropdown-reg', 'value'),
     Input('dropdown-cat', 'value'),
     Input('inputScore', 'value'))
-def getGenScat(compRegion = None, compCat = None, compScore = 0):
-    if compRegion==[]:
-        compRegion = None
+def getGenScat(compCat = None, compScore = 0):
     if compCat == []:
         compCat = None
     if compScore == None:
@@ -280,12 +288,10 @@ def getGenScat(compRegion = None, compCat = None, compScore = 0):
 
 @app.callback(
     Output('avgScat', 'figure'),
-    Input('dropdown-reg', 'value'),
+    #Input('dropdown-reg', 'value'),
     Input('dropdown-cat', 'value'),
     Input('inputScore', 'value'))
-def getAvgScat(compRegion = None, compCat = None, compScore = 0):
-    if compRegion==[]:
-        compRegion = None
+def getAvgScat(compCat = None, compScore = 0):
     if compCat == []:
         compCat = None
     if compScore == None:
@@ -294,31 +300,27 @@ def getAvgScat(compRegion = None, compCat = None, compScore = 0):
 
 @app.callback(
     Output('catHist', 'figure'),
-    Input('dropdown-reg', 'value'),
+    #Input('dropdown-reg', 'value'),
     Input('dropdown-cat', 'value'),
     Input('inputScore', 'value'))
-def getCatHist(compRegion = None, compCat = None, compScore = 0):
-    if compRegion==[]:
-        compRegion = None
+def getCatHist(compCat = None, compScore = 0):
     if compCat == []:
         compCat = None
     if compScore == None:
         compScore = 0
     return catHistogram(df, compScore,compCat)
 
-@app.callback(
-    Output('allHist', 'figure'),
-    Input('dropdown-reg', 'value'),
-    Input('dropdown-cat', 'value'),
-    Input('inputScore', 'value'))
-def getAllHist(compRegion = None, compCat = None, compScore = 0):
-    if compRegion==[]:
-        compRegion = None
-    if compCat == []:
-        compCat = None
-    if compScore == None:
-        compScore = 0
-    return allHistogram(df, compScore,compCat)
+# @app.callback(
+#     Output('allHist', 'figure'),
+#     #Input('dropdown-reg', 'value'),
+#     Input('dropdown-cat', 'value'),
+#     Input('inputScore', 'value'))
+# def getAllHist(compCat = None, compScore = 0):
+#     if compCat == []:
+#         compCat = None
+#     if compScore == None:
+#         compScore = 0
+#     return allHistogram(df, compScore,compCat)
 
 
 if __name__ == '__main__':
