@@ -59,7 +59,8 @@ def parseData(url):
     return df
 
 defaultResultsPage = "http://www.usaclimbing.org/Assets/Regional+Ranking-Preliminary-201102.pdf"
-fname ='/home/ABWatkins/USACVirtualQEClimbingAnalysis/assets/current_results.csv'
+#fname ='/home/ABWatkins/USACVirtualQEClimbingAnalysis/assets/current_results.csv'
+fname ='assets/current_results.csv'
 #df =parseData(defaultResultsPage)
 df = pd.read_csv(fname)
 
@@ -89,11 +90,20 @@ app.index_string = '''
 '''
 rlist = [ x for x in range(10,100) if x%10==1 or x%10==2]
 catList=['FJR', 'MJR', 'FYA', 'MYA', 'FYB', 'MYB', 'FYC', 'MYC', 'FYD', 'MYD']
+catColors ={'FJR':"#ffa822", 'MJR':"#b36b00",
+            'FYA':"#134e6f", 'MYA':"#071e2c",
+            'FYB':"#ff6150", 'MYB':"#ff1a00",
+            'FYC':"#1ac0c6", 'MYC': "#128387",
+            'FYD':"#b6bbc8", 'MYD': "#8b93a7"}
+bgcolor = '#f2f2f2'
 
 def genericScatter(df, compScore=0, compCat=None):
+    if compCat != None:
+        df = df[df['Category'].isin(compCat)]
     fig = px.scatter(df, x="Region", y="Score", color="Category",
-                 hover_data=['Score'],
-                category_orders ={'Region':rlist, 'Category':catList},
+                hover_data=['Score'],
+                color_discrete_map=catColors,
+                category_orders ={'Region':rlist, 'Category':catList},# if compCat == None else [compCat]},
                 title="Regional QE Scores by Region and Category",
                 #template="seaborn"
                 )
@@ -101,12 +111,14 @@ def genericScatter(df, compScore=0, compCat=None):
         fig.add_hline(y=compScore, annotation_text = 'Your Climber\'s Score',annotation_position='top left',
                     line_dash='dash')
     fig.update_xaxes(type='category')
+    fig.update_layout(paper_bgcolor=bgcolor)
     return fig
 
 def avgScatter(df, compScore =0, compCat = None):
     gf = df.groupby(['Region', 'Category'], as_index=False)['Score'].mean()
-    fig = px.scatter(gf, x="Region", y="Score", color="Category",
+    fig = px.scatter(gf if compCat == None else gf[gf['Category'].isin(compCat)], x="Region", y="Score", color="Category",
                      hover_data=['Score'],
+                     color_discrete_map=catColors,
                     category_orders ={'Region':rlist, 'Category':catList},
                     labels=dict(Score='Average Score'),
                     title='Average QE Score by Region and Category')
@@ -114,16 +126,19 @@ def avgScatter(df, compScore =0, compCat = None):
     if compScore>0:
         fig.add_hline(compScore, annotation_text = 'Your Climber\'s Score', annotation_position='top left',
                         line_dash='dash')
+    fig.update_layout(paper_bgcolor=bgcolor)
     return fig
 
 def catHistogram(df, compScore = 0, compCat = None):
-    fig = px.histogram(df, x="Score", color='Category',
+    fig = px.histogram(df if compCat == None else df[df['Category'].isin(compCat)], x="Score", color='Category',
+                        color_discrete_map=catColors,
                        category_orders ={'Region':rlist, 'Category':catList},
                        title="Histogram of Scores by Climbing Category (200 point bins)")
     if compScore>0:
         fig.add_vline(compScore, annotation_text = 'Your Climber\'s Score',
                         annotation_position="top left",
                         line_dash='dash')
+    fig.update_layout(paper_bgcolor=bgcolor)
     return fig
 
 def allHistogram(df, compScore = 0, compCat = None):
@@ -132,10 +147,11 @@ def allHistogram(df, compScore = 0, compCat = None):
         fig.add_vline(compScore, annotation_text = 'Your Climber\'s Score',
                         annotation_position="top left",
                         line_dash = 'dash')
+    fig.update_layout(paper_bgcolor=bgcolor)
     return fig
 
 def findPlace(df, testScore=0, testRegions=None, testCats = None):
-    retdf = pd.DataFrame(columns=['Region','Category', 'Place', 'NumClimbers'])
+    retdf = pd.DataFrame(columns=['Region','Category', 'Place', 'Number of Climbers'])
     if(testScore<=0):
         return retdf
     if testRegions==None:
@@ -194,7 +210,7 @@ app.layout = html.Div(children=[
         style_data_conditional=[
         {
             'if': {'row_index': 'odd'},
-            'backgroundColor': 'rgb(248, 248, 248)'
+            'backgroundColor': bgcolor#'rgb(248, 248, 248)'
         }
         ]
         ),
@@ -306,5 +322,5 @@ def getAllHist(compRegion = None, compCat = None, compScore = 0):
 
 
 if __name__ == '__main__':
-    #app.run_server(debug=True,host='127.0.0.1')
-    app.run_server(debug=True)
+    app.run_server(debug=True,host='127.0.0.1')
+    #app.run_server(debug=True)
