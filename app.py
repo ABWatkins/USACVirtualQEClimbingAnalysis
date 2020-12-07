@@ -194,7 +194,7 @@ cat_drop = html.Div([
 score_input = html.Div([
     dcc.Markdown('''**Enter your climber's score**'''),
     dcc.Input(id='inputScore', type='number', min=0, step=50, placeholder='2000', value=2000),
-], className = 'two columns')
+], className = 'three columns')
 
 table_results = html.Div([
     html.Div(id='score-output-container'),
@@ -207,7 +207,7 @@ table_results = html.Div([
             }
             ]
         )
-    ], className =' three columns')
+    ], className ='four columns')
 
 visuals = html.Div([
     html.Div([
@@ -229,7 +229,7 @@ visuals = html.Div([
 #        id='allHist',
 #        figure=allHFig
 #    )
-    ],className='nine columns',),
+    ],className='eight columns',),
 #], className='row'),
 ])
 
@@ -251,7 +251,8 @@ app.layout = html.Div(children=[
     #),
     #visulizations,
    html.Div([
-    dcc.Markdown(children='''Source code can be found on github: <https://github.com/ABWatkins/USACVirtualQEClimbingAnalysis>''', style={"text-align": "center"}),]),
+    dcc.Markdown(children='''Source code can be found on github: <https://github.com/ABWatkins/USACVirtualQEClimbingAnalysis>''', style={"text-align": "center"}),
+    dcc.Markdown(children='''Developed by Andrew Watkins: watkins dot andrewb at gmail dot com''', style={"text-align": "center"})]),
 ])
 
 @app.callback(
