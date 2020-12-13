@@ -324,6 +324,7 @@ Region,Category,FirstName,LastName,Score,Comp
 22,FYB,Aja,Lindley,2900,USAC Youth R22 The Front 09NOV20
 22,FYB,Lucy,Reed,2500,USAC Youth R22 The Hi-Line Climbing Center 16NOV20
 22,FYB,Keira,Schreiner,2300,USAC Youth R22 The Front 09NOV20
+22,FYB,Ava,Baskin,2300,USAC Youth R22 The Front 09NOV20
 22,FYB,Lain,Reddinger,2200,USAC Youth R22 Spire Climbing 09NOV20
 22,FYB,Lauren,Chapman,2200,USAC Youth R22 The Front 09NOV20
 22,FYB,Abby,Brooks,2200,USAC Youth R22 The Front 09NOV20
@@ -455,6 +456,7 @@ Region,Category,FirstName,LastName,Score,Comp
 31,FYD,Leina,Okamoto,400,USAC Youth R32 Sender One Santa Ana 09NOV20
 31,FYD,Sabine,Klausmeyer,250,USAC Youth R32 Sender One Santa Ana 09NOV20
 31,FYD,Alice,Sabo,250,USAC Youth R32 Sender One Santa Ana 09NOV20
+31,MYD,Takumi,Morita,2900,USAC Youth R32 Sender One Santa Ana 09NOV20
 32,FJR,Sora,Haagensen,3800,USAC Youth R32 Sender One Santa Ana 09NOV20
 32,FJR,Izabella,Adkins,3600,USAC Youth R32 The BLOC 02NOV20
 32,FJR,Phoebe,Yun,3000,USAC Youth R32 Sender One Santa Ana 09NOV20
@@ -570,6 +572,7 @@ Region,Category,FirstName,LastName,Score,Comp
 41,FYA,Anna,Lye,2600,USAC Youth R41 Blocworks 02NOV20
 41,FYA,Edie,Clark,2500,USAC Youth R41 Blocworks 02NOV20
 41,FYA,Izzy,Dodge,1200,USAC Youth R42 Ascent Studio 09NOV20
+41,MYA,Cody,Wentler,5200,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,MYA,Decker,Scully,4700,USAC Youth R41 Blocworks 02NOV20
 41,MYA,Connor,McQueen,4600,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,MYA,Austin,Reitz,4500,USAC Youth R41 Denver Bouldering Club Central 16NOV20
@@ -589,6 +592,7 @@ Region,Category,FirstName,LastName,Score,Comp
 41,MYA,William,Hallmark,600,USAC Youth R41 Blocworks 02NOV20
 41,FYB,Isabella,Orner,4200,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,FYB,Rosario,Cornell,4200,USAC Youth R41 Denver Bouldering Club Central 16NOV20
+41,FYB,Cassie,Kellen,4100,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,FYB,Eleanor,Ross,3400,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,FYB,Helena,Wang-Lohnes,3300,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,FYB,Katya,Roudakov,3200,USAC Youth R41 Denver Bouldering Club Central 16NOV20
@@ -631,6 +635,7 @@ Region,Category,FirstName,LastName,Score,Comp
 41,MYC,Beckett,Hsin,4700,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,MYC,Zane,Wagner,4200,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,MYC,Aiden,Harris,4000,USAC Youth R41 Denver Bouldering Club Central 16NOV20
+41,MYC,Keegan,Kline-Oliver,4000,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,MYC,Brennan,Rummel,3800,USAC Youth R41 Blocworks 02NOV20
 41,MYC,Alexander,Cassel,3500,USAC Youth R41 Blocworks 02NOV20
 41,MYC,Brice,Howard,3500,USAC Youth R41 Blocworks 02NOV20
@@ -645,11 +650,13 @@ Region,Category,FirstName,LastName,Score,Comp
 41,MYC,Ethan,Parker,200,USAC Youth R42 ABC Climbing 02NOV20
 41,FYD,Claire,Finlayson,2900,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,FYD,Valentina,DeSignor,2900,USAC Youth R41 Denver Bouldering Club Central 16NOV20
+41,FYD,Morgan,Belcher,2800,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,FYD,Sophia,McNab,2600,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,FYD,Olivia,Doniger,2500,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,FYD,Evah,Gunn-Roller,2200,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,FYD,Erin,Cassel,2100,USAC Youth R41 Blocworks 02NOV20
 41,FYD,Avery,Cassel,2000,USAC Youth R41 Blocworks 02NOV20
+41,FYD,Finley,Reed,1800,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,FYD,Sofia,Carlson,1600,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 41,FYD,Ava,Holbird,700,USAC Youth R41 Blocworks 02NOV20
 41,FYD,Ella,Regjo,300,USAC Youth R41 Monkey House Carbondale 02NOV20
@@ -687,7 +694,6 @@ Region,Category,FirstName,LastName,Score,Comp
 42,FYA,Natalie,Sager,1900,USAC Youth R42 ABC Climbing 02NOV20
 42,FYA,Avery,Lyons,1900,USAC Youth R42 Ascent Studio 09NOV20
 42,FYA,Maggie,Scott,400,USAC Youth R42 Ascent Studio 09NOV20
-42,MYA,Cody,Wentler,5200,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 42,MYA,Brayden,Batcheller,4600,USAC Youth R42 ABC Climbing 02NOV20
 42,MYA,Owen,DeJohn,4500,USAC Youth R42 ABC Climbing 02NOV20
 42,MYA,Sawyer,Johns,4400,USAC Youth R41 Denver Bouldering Club Central 16NOV20
@@ -705,7 +711,6 @@ Region,Category,FirstName,LastName,Score,Comp
 42,MYA,Hayden,Hull,1700,USAC Youth R42 ABC Climbing 02NOV20
 42,MYA,Connor,Lock,600,USAC Youth R42 Ascent Studio 09NOV20
 42,FYB,Paloma,Slowik,5000,USAC Youth R41 Denver Bouldering Club Central 16NOV20
-42,FYB,Cassie,Kellen,4100,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 42,FYB,Eve,Weksler,3800,USAC Youth R42 ABC Climbing 02NOV20
 42,FYB,Chloe,Dodd,3800,USAC Youth R42 Ascent Studio 09NOV20
 42,FYB,Emelie,Sprague,3600,USAC Youth R42 Ascent Studio 09NOV20
@@ -721,6 +726,7 @@ Region,Category,FirstName,LastName,Score,Comp
 42,MYB,Bryce,Alackness,4800,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 42,MYB,Joaquin,Oliva,4000,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 42,MYB,Calvin,Meymaris,4000,USAC Youth R42 ABC Climbing 02NOV20
+42,MYB,Aaron,Golding,4000,USAC Youth R42 Ascent Studio 09NOV20
 42,MYB,Korbett,Protzko,3800,USAC Youth R42 Ascent Studio 09NOV20
 42,MYB,Malachi,Donahoe,3600,USAC Youth R42 Ascent Studio 09NOV20
 42,MYB,Samuel,Hinerfeld,3500,USAC Youth R42 Ascent Studio 09NOV20
@@ -756,7 +762,6 @@ Region,Category,FirstName,LastName,Score,Comp
 42,FYC,Elena,Helbach,1500,USAC Youth R42 ABC Climbing 02NOV20
 42,FYC,Helena,Carr,1000,USAC Youth R42 ABC Climbing 02NOV20
 42,MYC,Nicholas,Yoon,4200,USAC Youth R41 Denver Bouldering Club Central 16NOV20
-42,MYC,Keegan,Kline-Oliver,4000,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 42,MYC,Zack,Bakker,3000,USAC Youth R42 Ascent Studio 09NOV20
 42,MYC,Sylas,Sprague,2800,USAC Youth R42 ABC Climbing 02NOV20
 42,MYC,Thomas,Cole,2600,USAC Youth R42 ABC Climbing 02NOV20
@@ -767,13 +772,11 @@ Region,Category,FirstName,LastName,Score,Comp
 42,MYC,Brandon,Kohla,1800,USAC Youth R42 ABC Climbing 02NOV20
 42,MYC,Cole,Walsh,1200,USAC Youth R42 Ascent Studio 09NOV20
 42,FYD,Mckenna,Alackness,4000,USAC Youth R41 Denver Bouldering Club Central 16NOV20
-42,FYD,Morgan,Belcher,2800,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 42,FYD,Charley,Planegger,2600,USAC Youth R42 ABC Climbing 02NOV20
 42,FYD,Amayah,Burgos,2100,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 42,FYD,Heidi,Stauffer,1900,USAC Youth R42 Ascent Studio 09NOV20
 42,FYD,Meg,Bakker,1900,USAC Youth R42 Ascent Studio 09NOV20
 42,FYD,Heidi,Hetzel,1800,USAC Youth R42 ABC Climbing 02NOV20
-42,FYD,Finley,Reed,1800,USAC Youth R41 Denver Bouldering Club Central 16NOV20
 42,FYD,Kelsey,Vitek,1200,USAC Youth R42 ABC Climbing 02NOV20
 42,FYD,Emerson,Chamberlain,1000,USAC Youth R42 ABC Climbing 02NOV20
 42,FYD,Genevieve,Hathcock,700,USAC Youth R42 Ascent Studio 09NOV20
@@ -1081,6 +1084,7 @@ Region,Category,FirstName,LastName,Score,Comp
 52,MYB,Cameron,Matejicka,3500,USAC Youth R52 ROKC Olathe 02NOV20
 52,MYB,Alex,Thuringer,3400,USAC Youth R52 Climb NuLu 09NOV20
 52,MYB,Raine,Torres,2900,USAC Youth R52 The Crag Nashville 09NOV20
+52,MYB,Logan,Hild,2800,USAC Youth R52 ROKC Olathe 02NOV20
 52,MYB,Grayson,Smith,2600,USAC Youth R52 Little Rock Climbing Center 16NOV20
 52,MYB,Austin,Smith,2400,USAC Youth R52 The Crag Nashville 09NOV20
 52,MYB,Keegan,Adams,2300,USAC Youth R52 ROKC Olathe 02NOV20
@@ -1415,7 +1419,6 @@ Region,Category,FirstName,LastName,Score,Comp
 71,MJR,George,Vilahomat,1000,USAC Youth R71 The Edge Miami 09NOV20
 71,FYA,Ella,Tillery,3900,USAC Youth R71 Stone Summit Kennesaw 16NOV20
 71,FYA,Piper,McGahee,3700,USAC Youth R71 Escalade 02NOV20
-71,FYA,Eliza,Degeneffe,3200,USAC Youth R72 Inner Peaks 02NOV20
 71,FYA,Reagan,Lewis,2800,USAC Youth R71 Vertical Ventures St. Pete 02NOV20
 71,FYA,Chaya,Becker,2700,USAC Youth R71 Escalade 02NOV20
 71,FYA,Trinity,Martinez,1900,USAC Youth R71 Escalade 02NOV20
@@ -1588,6 +1591,7 @@ Region,Category,FirstName,LastName,Score,Comp
 72,FYA,Jessica,Wence,3800,USAC Youth R72 Triangle Rock Club Durham 09NOV20
 72,FYA,Audrey,Williams,3800,USAC Youth R72 Triangle Rock Club Durham 09NOV20
 72,FYA,Ava,Mitchell,3500,USAC Youth R72 Cliff Hangers 16NOV20
+72,FYA,Eliza,Degeneffe,3200,USAC Youth R72 Inner Peaks 02NOV20
 72,FYA,Stella,Cross,3200,USAC Youth R72 Cliff Hangers 16NOV20
 72,FYA,Virginia,Johnson,3100,USAC Youth R72 Triangle Rock Club Durham 09NOV20
 72,FYA,Sawyer,Whalen,3100,USAC Youth R72 Cliff Hangers 16NOV20
@@ -1726,6 +1730,7 @@ Region,Category,FirstName,LastName,Score,Comp
 81,MYA,Elijah,Dale,3200,USAC Youth R81 Sportrock Alexandria 02NOV20
 81,MYA,Kai,Lakin,2700,USAC Youth R81 Sportrock Alexandria 02NOV20
 81,MYA,Ashton,Randolph,2000,USAC Youth R81 Triangle Rock Club Richmond 16NOV20
+81,MYA,Matthew,Bacho,1900,USAC Youth R81 The Boulder Yard 09NOV20
 81,MYA,Spencer,Villanueva,1800,USAC Youth R81 Sportrock Alexandria 02NOV20
 81,MYA,Logan,Kula,1800,USAC Youth R81 Sportrock Alexandria 02NOV20
 81,MYA,Davis,Harden,1200,USAC Youth R81 Sportrock Alexandria 02NOV20
@@ -1787,7 +1792,6 @@ Region,Category,FirstName,LastName,Score,Comp
 81,MYC,Aidan,O’Flaherty,1400,USAC Youth R81 Triangle Rock Club Richmond 16NOV20
 81,MYC,Liam,Lawrence,1200,USAC Youth R81 The Boulder Yard 09NOV20
 81,MYC,Nico,Abbate,1200,USAC Youth R81 Sportrock Alexandria 02NOV20
-81,FYD,Yehvin,Park,1800,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 81,FYD,Madeleine,Burgert,1000,USAC Youth R81 The Boulder Yard 09NOV20
 81,FYD,Ella,Patil,900,USAC Youth R81 Sportrock Alexandria 02NOV20
 81,FYD,Willow,Sharp,750,USAC Youth R81 Sportrock Alexandria 02NOV20
@@ -1832,6 +1836,8 @@ Region,Category,FirstName,LastName,Score,Comp
 82,FYB,Charlotte,Bertoni,2600,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,FYB,Layla,Kluth,2400,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,FYB,Naia,Beckwith,2200,USAC Youth R82 Gravity Vault Hoboken 16NOV20
+82,MYB,Keegan,Keller,3800,USAC Youth R82 Gravity Vault Hoboken 16NOV20
+82,MYB,Conor,Kelemen,3100,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,MYB,Michael,Ciongoli,2700,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,MYB,Daniel,Fiskin,2200,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,FYC,Suhvin,Park,3800,USAC Youth R82 Gravity Vault Hoboken 16NOV20
@@ -1845,10 +1851,12 @@ Region,Category,FirstName,LastName,Score,Comp
 82,MYC,Cruz,English,2800,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,MYC,Ori,Leshem,2800,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,MYC,Luke,Dreyfuss,2200,USAC Youth R82 Gravity Vault Hoboken 16NOV20
+82,MYC,Kevin,Keller,2100,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,MYC,Riley,McMynne,2000,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,MYC,Miles,Schwartz,1900,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,FYD,Ella,Music,2400,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,FYD,Emma,Harkin,2100,USAC Youth R82 Gravity Vault Hoboken 16NOV20
+82,FYD,Yehvin,Park,1800,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,FYD,Reagan,Draine,700,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,MYD,Colden,Floss,2400,USAC Youth R82 Gravity Vault Hoboken 16NOV20
 82,MYD,Eli,Sirota,2300,USAC Youth R82 Gravity Vault Hoboken 16NOV20
