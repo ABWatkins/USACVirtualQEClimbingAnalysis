@@ -10,15 +10,10 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_table
-import plotly.graph_objs as go
-import plotly.offline as pyo
 import plotly.express as px
 import pandas as pd
-import numpy as np
-import requests
-import pdfplumber
 
-from dash.dependencies import Input, Output, State, ClientsideFunction
+from dash.dependencies import Input, Output
 
 
 fname ='assets/current_results.csv'
@@ -131,7 +126,7 @@ def findPlace(df, testScore=0, testRegions=None, testCats = None):
                 retdf = retdf.append(pd.Series(row,index=retdf.columns), ignore_index = True)
     return retdf
 
-# Not really using the reigion_drop down any more
+# Not really using the region_drop down any more
 region_drop = html.Div([
     dcc.Markdown('''**Choose one or more regions** (or leave blank for all) '''),
     dcc.Dropdown(
@@ -195,7 +190,7 @@ visuals = html.Div([
 app.layout = html.Div(children=[
     html.Div([
     html.H2(children='Virtual Bouldering Regional Qualifier Events Across USAC Regions', style={"text-align": "center"}),
-    dcc.Markdown(children='''Based off of file: <http://www.usaclimbing.org/Assets/Regional+Ranking-Preliminary-201116b.pdf>''', style={"text-align": "center"}),
+    dcc.Markdown(children='''Based off of file: <http://www.usaclimbing.org/Assets/Regional+Ranking-Preliminary-201220d.pdf> (as of 1/5/2021)''', style={"text-align": "center"}),
     html.P(style={"text-align": "center"},children='Use this tool to compare a climber\'s score to others or to see general trends among climbers at QEs across the country'),
     html.Br(),
     ],),
